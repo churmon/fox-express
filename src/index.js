@@ -11,6 +11,7 @@ import vehicleCheckRoutes from "./routes/vehicleCheck.routes.js";
 
 const app= express();
 const PORT = process.env.PORT || 5000;
+// Rollback to the previous version of the code, as the recent edits have already been applied.
 
 // ─── Connect to MongoDB ───────────────────────────────────────────────────────
 connectDB();
