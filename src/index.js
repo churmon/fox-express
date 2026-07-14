@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,               // Required for cookies
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
@@ -31,9 +31,9 @@ app.all("/api/auth/*splat", toNodeHandler(auth));
 
 // ─── Body Parsers ─────────────────────────────────────────────────────────────
 app.use(express.json());
-app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin"}
-}));
+// app.use(helmet({
+//   crossOriginResourcePolicy: { policy: "cross-origin"}
+// }));
 app.use(express.urlencoded({ extended: true }));
 
 // ─── Cookie Parser ────────────────────────────────────────────────────────────
